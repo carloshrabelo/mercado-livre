@@ -2,9 +2,9 @@
   "name": "custom-server-express",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "nodemon server/index.js",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production node server.js",
+    "start": "cross-env NODE_ENV=production node server/index.js",
     "lint-staged": "lint-staged"
   },
   "husky": {
@@ -30,6 +30,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.17.0",
     "lint-staged": "^9.5.0",
+    "nodemon": "^2.0.1",
     "prettier": "^1.19.1",
     "stylelint": "^12.0.0",
     "stylelint-config-sass-guidelines": "^6.2.0",
