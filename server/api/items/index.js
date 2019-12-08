@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
       `${API}/sites/MLA/search?q=${q}`
     ).then(result => {
       if (!result.ok) throw result.message;
-      result.json();
+      return result.json();
     });
     const items = results.slice(0, 4).map(formater);
     const categories = filters
