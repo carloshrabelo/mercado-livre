@@ -17,8 +17,8 @@ const formater = ({
   title,
   location: city_name,
   price: {
-    price: slicePrice(price),
-    currency: currency_id
+    currency: currency_id,
+    ...slicePrice(price)
   },
   picture: thumbnail,
   condition,
