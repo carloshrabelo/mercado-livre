@@ -1,25 +1,25 @@
 import { useDispatch } from "react-redux";
 import actionTypes from "../constant/actionTypes";
 
-const url = `/api/items?q=`;
+const url = `/api/items/`;
 
 export default () => {
   const dispatch = useDispatch();
 
   const loading = () =>
     dispatch({
-      type: actionTypes.FETCH_ITEMS
+      type: actionTypes.FETCH_ITEM
     });
 
   const succces = payload =>
     dispatch({
-      type: actionTypes.FETCH_ITEMS_SUCCESS,
+      type: actionTypes.FETCH_ITEM_SUCCESS,
       payload
     });
 
   const error = () =>
     dispatch({
-      type: actionTypes.FETCH_ITEMS_ERROR
+      type: actionTypes.FETCH_ITEM_ERROR
     });
   const find = q => {
     loading();
