@@ -1,15 +1,23 @@
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
-const Items = () => {
+import { useSelector } from "react-redux";
+
+import actionItems from "../../actions/items";
+import withContent from "../../hoc/withContent";
+import Items from "../../components/Items";
+
+export default () => {
   const router = useRouter();
   const { search } = router.query;
 
-  return (
-    <>
-      <h1>TODO: {search}</h1>
-    </>
-  );
-};
+  const { data, isError, isLoading } = useSelector(({ items }) => items);
+  const { clear, find } = actionItems();
+  const products = data.items || [];
 
-export default Items;
+  useEffect(() => {
+    find(search);
+    return clear;
+  }, [search]);
+  return withContent(Items)({ data, isError, isLoading, products });
+};

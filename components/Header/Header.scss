@@ -3,8 +3,12 @@
   border: 0;
   position: relative;
 
-  .img {
+  .logo {
+    color: inherit;
+    cursor: pointer;
     margin-right: $margin;
+    outline: 0;
+    text-decoration: none;
   }
 
   .container {
@@ -13,13 +17,6 @@
     margin: 0 auto;
     max-width: $container-size;
     padding: $padding;
-  }
-
-  .logo {
-    color: inherit;
-    cursor: pointer;
-    outline: 0;
-    text-decoration: none;
   }
 
   .form {

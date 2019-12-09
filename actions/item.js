@@ -21,6 +21,11 @@ export default () => {
     dispatch({
       type: actionTypes.FETCH_ITEM_ERROR
     });
+
+  const clear = () =>
+    dispatch({
+      type: actionTypes.CLEAR_ITEM
+    });
   const find = q => {
     loading();
     fetch(`${url}${q}`)
@@ -31,5 +36,5 @@ export default () => {
       .then(succces)
       .catch(error);
   };
-  return { find };
+  return { clear, find };
 };

@@ -1,0 +1,92 @@
+.detail {
+  background-color: $container-bg;
+  border-radius: $radius;
+  border-radius: 0;
+  display: grid;
+  grid-gap: $margin;
+  grid-template-columns: 1fr;
+  margin-bottom: $margin;
+  padding: $padding;
+  padding: $margin;
+  @include md {
+    border-radius: $radius;
+    grid-gap: $gutter;
+    grid-template-columns: 680px 1fr;
+    padding: $gutter;
+  }
+}
+
+.img {
+  border-radius: $radius;
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: $font-size-largest;
+  word-break: break-all;
+  @include md {
+    font-size: $font-size-largest;
+    margin-bottom: $margin;
+  }
+}
+
+.caption {
+  color: $text-muted;
+  display: block;
+  font-size: $font-size-small;
+  margin-bottom: $font-size-smallest;
+  @include md {
+    margin-bottom: $margin;
+  }
+}
+
+.value {
+  font-size: $font-big;
+  font-weight: 300;
+  margin: $font-size-largest 0;
+  @include md {
+    font-weight: 400;
+    margin: $gutter 0;
+  }
+
+  span {
+    display: inline-block;
+    font-size: 22px;
+    padding-left: 5px;
+    transform: translateY(-17px);
+  }
+}
+
+.button {
+  background-color: $primary-bg;
+  border: 0;
+  border-radius: $radius;
+  color: $primary-color;
+  cursor: pointer;
+  font-size: 15px;
+  padding: $font-size-smallest 10px;
+  width: 100%;
+}
+
+.description {
+  h4 {
+    color: $text-color;
+    font-size: $font-size-largest;
+    font-weight: 500;
+    margin-bottom: $gutter;
+    @include md {
+      font-size: 28px;
+    }
+  }
+
+  p {
+    color: $secondary-color;
+    font-size: $font-size-small;
+    line-height: 1.6;
+    @include md {
+      font-size: $font-size-base;
+    }
+  }
+}

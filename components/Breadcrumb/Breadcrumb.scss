@@ -1,0 +1,18 @@
+.breadcrumb {
+  color: $text-muted;
+  font-size: $font-size-small;
+  margin: $margin 0;
+
+  .item {
+    display: inline-block;
+
+    &:last-child {
+      font-weight: 600;
+    }
+
+    &:not(:last-child)::after {
+      content: '>';
+      padding: 0 $padding;
+    }
+  }
+}

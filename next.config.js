@@ -10,7 +10,7 @@ const config = {
     localIdentName: "[local]___[hash:base64:5]"
   },
   sassLoaderOptions: {
-    data: '@import "styles/variables.scss";'
+    data: '@import "styles/variables.scss";@import "styles/mixin.scss";'
   }
 };
 
