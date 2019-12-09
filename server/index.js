@@ -1,5 +1,7 @@
 const express = require("express");
+var path = require("path");
 const next = require("next");
+var favicon = require("serve-favicon");
 const api = require("./api");
 
 const port = parseInt(process.env.PORT, 10) || 3000;
@@ -9,8 +11,10 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   const server = express();
+  server.use(favicon(path.join(__dirname, "../", "favicon.ico")));
 
   server.use("/api", api);
+
   server.all("*", (req, res) => {
     return handle(req, res);
   });
